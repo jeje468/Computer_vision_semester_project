@@ -34,7 +34,7 @@ def retrieveDartContour(board, dart, area):
     cv.imwrite('Images/Contour_detection/6_contrast_increase_after_median_blur.jpg', res)
 
     # Apply thresholding to create a binary mask
-    (thresh, mask) = cv.threshold(res, 240, 255, cv.THRESH_OTSU)
+    (thresh, mask) = cv.threshold(res, 240, 255, cv.THRESH_BINARY+cv.THRESH_OTSU)
     cv.imwrite('Images/Contour_detection/7_thresholding.jpg', mask)
 
     # Find contours in the binary mask
